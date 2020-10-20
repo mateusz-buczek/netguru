@@ -1,0 +1,15 @@
+# Django
+django==3.0.0
+
+# Postgres support
+psycopg2-binary==2.8.5
+psycopg2==2.8.5
+
+# Additional packages
+djangorestframework==3.11.0
+markdown
+
+django-cacheops==5.0.1
+
+isort==5.4.2
+
