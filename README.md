@@ -24,4 +24,4 @@ docker-compose exec web sh
 python manage.py createsuperuser
 ``` 
 and follow instructions
-# netguru
+
