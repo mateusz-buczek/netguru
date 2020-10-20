@@ -17,14 +17,11 @@ is enough.
 
 To create superuser: 
 ```
-docker-compose exec web /bin/sh
+docker-compose exec web sh
 ``` 
 
 ```
-cd website 
-```
-
-```
-./manage.py createsuperuser
+python manage.py createsuperuser
 ``` 
-and follow instructions# netguru
+and follow instructions
+# netguru
