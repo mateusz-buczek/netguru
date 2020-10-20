@@ -18,8 +18,9 @@ env = environ.Env()
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = (environ.Path(__file__) - 3)
-APPS_DIR = BASE_DIR.path("miloweb")
-
+print(f'BASE DIR: {BASE_DIR}')
+APPS_DIR = BASE_DIR.path("netguru")
+print(f'APPS DIR: {APPS_DIR}')
 env_file = str(BASE_DIR.path('.env'))
 print('Loading : {}'.format(env_file))
 env.read_env(env_file)
@@ -30,12 +31,15 @@ print('The .env file has been loaded. See base.py for more information')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'yy58m0ru%##+xni84pd27m99^t=ru01t!tp)8+hroqgop1b3!d'
+SECRET_KEY = env(
+    "DJANGO_SECRET_KEY",
+    default='yy58m0ru%##+xni84pd27m99^t=ru01t!tp)8+hroqgop1b3!d'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG", True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS', default='*')]
 
 
 # Application definition
@@ -54,7 +58,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-
+    'netguru.cars.apps.CarsAppConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
