@@ -25,3 +25,9 @@ python manage.py createsuperuser
 ``` 
 and follow instructions
 
+
+Browsable API is available at 
+```
+localhost:8000/api-info/
+```
+or other port if you specify it for `web` container in `docker-compose.yml`
