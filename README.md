@@ -31,3 +31,4 @@ Browsable API is available at
 localhost:8000/api-info/
 ```
 or other port if you specify it for `web` container in `docker-compose.yml`
+You can check how it works with swagger GUI, or f.e. curl requests that it generates
