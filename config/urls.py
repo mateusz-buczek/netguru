@@ -19,6 +19,8 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 
+from django.conf import settings
+
 schema_view = get_schema_view(
    openapi.Info(
       title="Cars API",
@@ -38,3 +40,11 @@ urlpatterns += [
     path('admin/', admin.site.urls),
     path(r'api/', include('netguru.api.urls', namespace='api')),
 ]
+if settings.DEBUG:
+    import debug_toolbar
+    from django.conf.urls.static import static
+    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+    urlpatterns += [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ]

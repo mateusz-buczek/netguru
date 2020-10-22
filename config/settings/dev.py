@@ -1,7 +1,5 @@
 from .base import *  # noqa
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 THIRD_PARTY_APPS += ['debug_toolbar']
 
 MIDDLEWARE += [

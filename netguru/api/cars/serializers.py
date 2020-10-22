@@ -8,7 +8,10 @@ class CarSerializer(serializers.ModelSerializer):
     make = serializers.SerializerMethodField()
 
     def get_average_rating(self, obj):
-        return obj.average_rating or 'No ratings yet'
+        if type(obj.average_rating) == float:
+            return round(obj.average_rating, 1)
+        else:
+            return'No ratings yet'
 
     def get_make(self, obj):
         return obj.make.name
