@@ -29,7 +29,7 @@ print('The .env file has been loaded. See base.py for more information')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env(
     "DJANGO_SECRET_KEY",
-    default='yy58m0ru%##+xni84pd27m99^t=ru01t!tp)8+hroqgop1b3!d'
+    default=''
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
