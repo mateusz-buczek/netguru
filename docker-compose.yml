@@ -15,7 +15,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: compose/django/Dockerfile
+      dockerfile: Dockerfile
       args:
         USER_ID: 1000
         USER_GROUP: 1000
