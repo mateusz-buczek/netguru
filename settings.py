@@ -17,7 +17,9 @@ import environ
 env = environ.Env()
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = (environ.Path(__file__) - 3)
+BASE_DIR = (environ.Path(__file__) - 2)
+print(f'BASE DIR: {BASE_DIR}')
+
 APPS_DIR = BASE_DIR.path("netguru")
 env_file = str(BASE_DIR.path('.env'))
 env.read_env(env_file)
