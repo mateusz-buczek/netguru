@@ -12,20 +12,30 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+import environ
+
+env = environ.Env()
+
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = PROJECT_DIR
+BASE_DIR = (environ.Path(__file__) - 3)
 APPS_DIR = BASE_DIR.path("netguru")
 env_file = str(BASE_DIR.path('.env'))
+env.read_env(env_file)
+print('The .env file has been loaded. See base.py for more information')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = env(
+    "DJANGO_SECRET_KEY",
+    default=''
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env.bool("DJANGO_DEBUG", False)
 
-ALLOWED_HOSTS = ['netguru-cars.herokuapp.com']
+ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS', default='*')]
 
 # Application definition
 
@@ -84,7 +94,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {"default": {}}
+DATABASES = {"default": env.db("DATABASE_URL")}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # Password validation
@@ -126,6 +136,5 @@ STATIC_ROOT = str(BASE_DIR.path('staticfiles'))
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 import dj_database_url
-
-prod_db = dj_database_url.config(conn_max_age=500)
+prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
