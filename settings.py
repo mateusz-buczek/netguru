@@ -35,7 +35,7 @@ SECRET_KEY = os.getenv(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DJANGO_DEBUG", False)
+DEBUG = False
 print(f'DEBUG: {DEBUG}')
 
 ALLOWED_HOSTS = ['netguru-cars.herokuapp.com']
