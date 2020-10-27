@@ -21,7 +21,7 @@ BASE_DIR = (environ.Path(__file__) - 3)
 APPS_DIR = BASE_DIR.path("netguru")
 env_file = str(BASE_DIR.path('.env'))
 env.read_env(env_file)
-print('The .env file has been loaded. See base.py for more information')
+print('The .env file has been loaded. See base.py for more information_____')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -133,6 +133,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR.path('staticfiles'))
+print(f'STATIC ROOT: {STATIC_ROOT}')
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 import dj_database_url
