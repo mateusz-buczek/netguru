@@ -22,6 +22,8 @@ APPS_DIR = BASE_DIR.path("netguru")
 env_file = str(BASE_DIR.path('.env'))
 env.read_env(env_file)
 print('The .env file has been loaded. See base.py for more information_____')
+print(f'APPS DIR: {APPS_DIR}')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
