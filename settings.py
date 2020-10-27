@@ -144,3 +144,4 @@ DATABASES['default'].update(prod_db)
 
 import django_heroku
 django_heroku.settings(locals())
+print(f'STATICFILES_STORAGE: {STATICFILES_STORAGE}')
