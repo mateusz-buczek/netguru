@@ -18,13 +18,11 @@ env = environ.Env()
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = (environ.Path(__file__) - 1)
-print(f'BASE DIR: {BASE_DIR}')
 
 APPS_DIR = BASE_DIR.path("netguru")
 env_file = str(BASE_DIR.path('.env'))
 env.read_env(env_file)
 print('The .env file has been loaded. See base.py for more information_____')
-print(f'APPS DIR: {APPS_DIR}')
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,6 +36,7 @@ SECRET_KEY = os.getenv(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DJANGO_DEBUG", False)
+print(f'DEBUG: {DEBUG}')
 
 ALLOWED_HOSTS = ['netguru-cars.herokuapp.com']
 
@@ -137,7 +136,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR.path('staticfiles'))
-print(f'STATIC ROOT: {STATIC_ROOT}')
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 import dj_database_url
