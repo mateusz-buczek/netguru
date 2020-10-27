@@ -35,7 +35,7 @@ SECRET_KEY = env(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG", False)
 
-ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS', default='*')]
+ALLOWED_HOSTS = ['netguru-cars.herokuapp.com']
 
 # Application definition
 
