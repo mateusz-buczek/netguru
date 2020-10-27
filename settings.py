@@ -141,7 +141,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 import dj_database_url
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
-#
-# import django_heroku
-# django_heroku.settings(locals())
-# print(f'STATICFILES_STORAGE: {STATICFILES_STORAGE}')
+
+print(f'STATICFILES_STORAGE: {STATICFILES_STORAGE}')
+print(f'STATIC_ROOT: {STATIC_ROOT}')
+
