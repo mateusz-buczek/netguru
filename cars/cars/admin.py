@@ -1,6 +1,6 @@
 from django.contrib.admin import ModelAdmin, register
 
-from netguru.cars.models import Car, Make, Rating
+from cars.cars.models import Car, Make, Rating
 
 
 @register(Car)

@@ -1,5 +1,5 @@
 """
-WSGI config for netguru project.
+WSGI config for cars project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

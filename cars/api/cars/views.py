@@ -8,8 +8,8 @@ from rest_framework.mixins import ListModelMixin, CreateModelMixin
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 
-from netguru.api.cars.serializers import CarSerializer, RatingSerializer, PopularCarSerializer
-from netguru.cars.models import Car, Make
+from cars.api.cars.serializers import CarSerializer, RatingSerializer, PopularCarSerializer
+from cars.cars.models import Car, Make
 
 
 class CarView(ListModelMixin, CreateModelMixin, GenericViewSet):

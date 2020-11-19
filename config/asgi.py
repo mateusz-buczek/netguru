@@ -1,5 +1,5 @@
 """
-ASGI config for netguru project.
+ASGI config for cars project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'netguru.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cars.settings')
 
 application = get_asgi_application()
