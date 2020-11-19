@@ -3,7 +3,7 @@ from mixer.backend.django import mixer
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from netguru.cars.models import Car, Make, Rating
+from cars.cars.models import Car, Make, Rating
 
 
 class PopularTests(APITestCase):

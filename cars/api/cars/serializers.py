@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from netguru.cars.models import Car, Make, Rating
+from cars.cars.models import Car, Make, Rating
 
 
 class CarSerializer(serializers.ModelSerializer):

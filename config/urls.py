@@ -1,4 +1,4 @@
-"""netguru URL Configuration
+"""cars URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -25,7 +25,7 @@ schema_view = get_schema_view(
    openapi.Info(
       title="Cars API",
       default_version='v1',
-      description="For Netguru task",
+      description="",
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
@@ -38,7 +38,7 @@ urlpatterns += [
 ]
 urlpatterns += [
     path('admin/', admin.site.urls),
-    path(r'api/', include('netguru.api.urls', namespace='api')),
+    path(r'api/', include('cars.api.urls', namespace='api')),
 ]
 if settings.DEBUG:
     import debug_toolbar

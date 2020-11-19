@@ -15,6 +15,12 @@ docker-compose up
 ``` 
 is enough. After build and before another up create `.env` file in root directory basing on `.env.example` file
 
+Remember to 
+```
+python manage.py collectstatic
+``` 
+when running with `DEBUG = False`
+
 To create superuser: 
 
 enter working container

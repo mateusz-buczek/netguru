@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework import routers
 
-from netguru.api.cars.views import CarView, RatingView, PopularView
+from cars.api.cars.views import CarView, RatingView, PopularView
 
 app_name = 'api'
 urlpatterns = [
